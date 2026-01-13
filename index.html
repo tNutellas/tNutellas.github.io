@@ -3,10 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Convite</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Hello, World!</h1>
+    <main class="container">
+      <h1>Confirmação de Presença</h1>
+
+      <form
+        id="rsvp-form"
+        class="rsvp-form"
+        aria-label="Formulário de confirmação"
+      >
+        <label for="name">Nome</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Seu nome"
+        />
+
+        <label for="attending">Vai comparecer?</label>
+        <select id="attending" name="attending">
+          <option value="yes">Sim</option>
+          <option value="no">Não</option>
+        </select>
+
+        <button type="submit">Confirmar</button>
+      </form>
+
+      <section class="guest-section">
+        <h2>Lista de Convidados</h2>
+        <ul id="guest-list" class="guest-list" aria-live="polite"></ul>
+      </section>
+    </main>
   </body>
 </html>
