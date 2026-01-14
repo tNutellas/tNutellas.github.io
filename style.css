@@ -1,10 +1,28 @@
+/* Paleta Serenity centralizada em variáveis */
+:root {
+  --serenity-bg: #e6eef7;
+  --serenity-text: #2f5d8a;
+  --serenity-shadow-rgb: 131, 160, 209;
+  --serenity-h1: #6f8faf;
+  --serenity-border: #bfd7ea;
+  --serenity-outline: #91a8d0;
+  --serenity-primary: #91a8d0;
+  --serenity-primary-dark: #6f8faf;
+  --serenity-ghost: #e6eef7;
+  /* petal color tokens (usar em flowers.css) */
+  --petal-a: #bfd7ea;
+  --petal-b: #91a8d0;
+  --petal-c: #d9eaf7;
+  --petal-d: #6f8faf;
+}
+
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial;
   margin: 0;
   padding: 24px;
-  background: #f7f7fb;
-  color: #111;
+  background: var(--serenity-bg);
+  color: var(--serenity-text);
 }
 
 .container {
@@ -12,13 +30,13 @@ body {
   margin: 0 auto;
   background: #fff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(12, 20, 35, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(var(--serenity-shadow-rgb), 0.15);
 }
 
 h1 {
   margin-top: 0;
-  color: #333;
+  color: var(--serenity-h1);
 }
 
 .rsvp-form {
@@ -30,17 +48,24 @@ h1 {
 .rsvp-form input,
 .rsvp-form select {
   padding: 8px 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--serenity-border);
   border-radius: 6px;
+  outline-color: var(--serenity-outline);
 }
 
 .rsvp-form button {
   padding: 10px 14px;
   border: none;
-  background: #0066ff;
+  background: var(--serenity-primary);
   color: #fff;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.rsvp-form button:hover {
+  background: var(--serenity-primary-dark);
 }
 
 .guest-list {
@@ -54,13 +79,29 @@ h1 {
   justify-content: space-between;
   align-items: center;
   padding: 8px 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--serenity-ghost);
 }
 
 .btn-remove {
   background: transparent;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--serenity-border);
+  color: var(--serenity-h1);
   padding: 6px 8px;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+}
+
+.btn-remove:hover {
+  background: var(--serenity-ghost);
+  border-color: var(--serenity-outline);
+}
+
+/* estilos das flores movidos para flowers.css */
+
+@media (max-width: 900px) {
+  .flower-garden {
+    opacity: 0.3;
+  }
 }
