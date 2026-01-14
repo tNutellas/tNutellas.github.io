@@ -1,70 +1,4 @@
-const STORAGE_KEY = "rsvp_guests_v1";
-
-window.guestsList = window.guestsList || [];
-
-function loadGuests() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    window.guestsList = raw ? JSON.parse(raw) : [];
-  } catch (e) {
-    window.guestsList = [];
-  }
-  return window.guestsList;
-}
-
-function saveGuests() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(window.guestsList));
-}
-
-function addGuest(name, attending) {
-  window.guestsList.push({ name, attending, addedAt: Date.now() });
-  saveGuests();
-  renderGuests();
-}
-
-function removeGuest(index) {
-  if (index >= 0 && index < window.guestsList.length) {
-    window.guestsList.splice(index, 1);
-    saveGuests();
-    renderGuests();
-  }
-}
-
-function renderGuests() {
-  const list = document.getElementById("guest-list");
-  const count = document.getElementById("guest-count");
-  const guests = window.guestsList || [];
-  if (!list) return;
-  list.innerHTML = "";
-  guests.forEach((g, idx) => {
-    const li = document.createElement("li");
-    li.className = "guest-item";
-    li.innerHTML = `<strong>${escapeHtml(g.name)}</strong> — ${
-      g.attending === "yes" ? "Vai" : "Não vai"
-    }`;
-
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remover";
-    removeBtn.className = "btn-remove";
-    removeBtn.addEventListener("click", () => removeGuest(idx));
-
-    li.appendChild(removeBtn);
-    list.appendChild(li);
-  });
-  if (count) count.textContent = guests.length;
-}
-
-function escapeHtml(str) {
-  return String(str).replace(/[&<>"']/g, function (s) {
-    return {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;",
-    }[s];
-  });
-}
+// Guest list functionality removed.
 
 function randomBetween(min, max) {
   return Math.random() * (max - min) + min;
@@ -153,22 +87,6 @@ window.stopPetalSpawner = stopPetalSpawner;
 
 // DOM ready
 document.addEventListener("DOMContentLoaded", () => {
-  // carregar lista existente e inicializar
-  loadGuests();
-  const form = document.getElementById("rsvp-form");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const attending = document.getElementById("attending").value;
-      if (!name) return;
-      addGuest(name, attending);
-      form.reset();
-    });
-  }
-
-  renderGuests();
-
   // iniciar spawner incremental de pétalas (padrão)
   try {
     startPetalSpawner(600, 120); // spawn a cada 600ms, máximo 120

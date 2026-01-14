@@ -26,7 +26,6 @@ body {
   margin: 0 auto;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(var(--serenity-shadow-rgb), 0.15);
   position: relative;
   z-index: 3;
 }
@@ -38,63 +37,14 @@ h1 {
   font-style: italic;
 }
 
-.rsvp-form {
-  display: grid;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.rsvp-form input,
-.rsvp-form select {
-  padding: 8px 10px;
-  border: 1px solid var(--serenity-border);
-  border-radius: 6px;
-  outline-color: var(--serenity-outline);
-}
-
-.rsvp-form button {
-  padding: 10px 14px;
-  border: none;
-  background: var(--serenity-primary);
-  color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.rsvp-form button:hover {
-  background: var(--serenity-primary-dark);
-}
-
-.guest-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.guest-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--serenity-ghost);
-}
-
-.btn-remove {
-  border: 1px solid var(--serenity-border);
+h2 {
+  margin-top: 0;
   color: var(--serenity-h1);
-  padding: 6px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  transition: all 0.3s;
+  font-family: "Mrs Saint Delafield", serif;
+  font-size: 100px;
 }
 
-.btn-remove:hover {
-  background: var(--serenity-ghost);
-  border-color: var(--serenity-outline);
-}
+/* estilos da lista de convidados removidos */
 
 @media (max-width: 900px) {
   .flower-garden {
