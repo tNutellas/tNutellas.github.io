@@ -44,6 +44,11 @@ h2 {
   font-size: 100px;
 }
 
+p {
+  font-family: "Great Vibes", cursive;
+  font-size: 48px;
+  margin-top: -80px;
+}
 /* estilos da lista de convidados removidos */
 
 @media (max-width: 900px) {
