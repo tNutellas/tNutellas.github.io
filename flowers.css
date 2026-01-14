@@ -1,334 +1,59 @@
-/* Flores nas laterais (apenas pétalas) - extraído para arquivo separado */
-.flower-garden {
+:root {
+  --petal-shadow: 0 6px 12px rgba(30, 70, 110, 0.08);
+}
+
+.petal-field {
   position: fixed;
-  top: 0;
+  inset: 0;
   height: 100vh;
-  width: 100px;
   pointer-events: none;
-  z-index: -1;
-}
-
-.flower-garden.left {
-  left: 0;
-}
-
-.flower-garden.right {
-  right: 0;
-}
-
-.flower {
-  position: absolute;
-  top: -100px;
-  transform-origin: center center;
-  animation: fall linear infinite;
+  z-index: 0;
+  overflow: hidden;
 }
 
 .petal {
   position: absolute;
-  width: 28px;
-  height: 28px;
-  border-radius: 50% 50% 0 50%;
-  opacity: 0.85;
+  top: -14%;
+  will-change: transform, top;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-duration: var(--d, 10s);
+  background: transparent;
+  mix-blend-mode: multiply;
+  animation-delay: var(--delay, 0s);
 }
 
-.petal:nth-child(1) {
-  transform: rotate(0deg) translate(0, -10px);
-}
-.petal:nth-child(2) {
-  transform: rotate(90deg) translate(0, -10px);
-}
-.petal:nth-child(3) {
-  transform: rotate(180deg) translate(0, -10px);
-}
-.petal:nth-child(4) {
-  transform: rotate(270deg) translate(0, -10px);
-}
-
-/* Configurações de Queda Individual */
-.f1 {
-  left: 5%;
-  animation-duration: 7s;
-  animation-delay: 0s;
-}
-.f1 .petal {
-  background: var(--petal-a);
-}
-
-.f2 {
-  left: 45%;
-  animation-duration: 9s;
-  animation-delay: 2s;
-}
-.f2 .petal {
-  background: var(--petal-b);
-}
-
-.f3 {
-  left: 15%;
-  animation-duration: 12s;
-  animation-delay: 4s;
-}
-.f3 .petal {
-  background: var(--petal-c);
-}
-
-.f4 {
-  left: 35%;
-  animation-duration: 8s;
-  animation-delay: 1s;
-}
-.f4 .petal {
-  background: var(--petal-d);
-}
-
-.f5 {
-  left: 10%;
-  animation-duration: 11s;
-  animation-delay: 5s;
-}
-.f5 .petal {
-  background: var(--petal-b);
-}
-
-.f6 {
-  right: 5%;
-  animation-duration: 7.5s;
-  animation-delay: 0.2s;
-}
-.f6 .petal {
-  background: var(--petal-a);
-}
-
-.f7 {
-  right: 45%;
-  animation-duration: 10s;
-  animation-delay: 2.5s;
-}
-.f7 .petal {
-  background: var(--petal-b);
-}
-
-.f8 {
-  right: 10%;
-  animation-duration: 12.5s;
-  animation-delay: 4.5s;
-}
-.f8 .petal {
-  background: var(--petal-c);
-}
-
-.f9 {
-  right: 35%;
-  animation-duration: 8.5s;
-  animation-delay: 1.5s;
-}
-.f9 .petal {
-  background: var(--petal-d);
-}
-
-.f10 {
-  right: 25%;
-  animation-duration: 11.5s;
-  animation-delay: 5.5s;
-}
-.f10 .petal {
-  background: var(--petal-b);
-}
-
-.f11 {
-  left: 60px;
-  animation-duration: 10s;
-  animation-delay: 0.2s;
-}
-.f11 .petal {
-  background: var(--petal-c);
-}
-
-.f12 {
-  left: 10px;
-  animation-duration: 13s;
-  animation-delay: 1.5s;
-}
-.f12 .petal {
-  background: var(--petal-a);
-}
-
-.f13 {
-  left: 70px;
-  animation-duration: 7s;
-  animation-delay: 0.7s;
-}
-.f13 .petal {
-  background: var(--petal-b);
-}
-
-.f14 {
-  left: 25px;
-  animation-duration: 9.5s;
-  animation-delay: 1.1s;
-}
-.f14 .petal {
-  background: var(--petal-d);
-}
-
-.f15 {
-  left: 55px;
-  animation-duration: 11.5s;
-  animation-delay: 0.3s;
-}
-.f15 .petal {
-  background: var(--petal-b);
-}
-
-.f16 {
-  right: 70px;
-  animation-duration: 9s;
-  animation-delay: 0.8s;
-}
-.f16 .petal {
-  background: var(--petal-c);
-}
-
-.f17 {
-  right: 15px;
-  animation-duration: 14s;
-  animation-delay: 0.4s;
-}
-.f17 .petal {
-  background: var(--petal-a);
-}
-
-.f18 {
-  right: 65px;
-  animation-duration: 7.8s;
-  animation-delay: 1.2s;
-}
-.f18 .petal {
-  background: var(--petal-b);
-}
-
-.f19 {
-  right: 30px;
-  animation-duration: 10.5s;
-  animation-delay: 0.6s;
-}
-.f19 .petal {
-  background: var(--petal-d);
-}
-
-.f20 {
-  right: 55px;
-  animation-duration: 12s;
-  animation-delay: 1.4s;
-}
-.f20 .petal {
-  background: var(--petal-b);
-}
-
-/* Variações de tamanho para profundidade */
-.f1 .petal {
-  width: 36px;
-  height: 36px;
-}
-.f2 .petal {
-  width: 40px;
-  height: 40px;
-}
-.f3 .petal {
-  width: 34px;
-  height: 34px;
-}
-.f4 .petal {
-  width: 38px;
-  height: 38px;
-}
-.f5 .petal {
-  width: 34px;
-  height: 34px;
-}
-.f6 .petal {
-  width: 36px;
-  height: 36px;
-}
-.f7 .petal {
-  width: 40px;
-  height: 40px;
-}
-.f8 .petal {
-  width: 34px;
-  height: 34px;
-}
-.f9 .petal {
-  width: 38px;
-  height: 38px;
-}
-.f10 .petal {
-  width: 34px;
-  height: 34px;
-}
-.f11 .petal {
-  width: 36px;
-  height: 36px;
-}
-.f12 .petal {
-  width: 40px;
-  height: 40px;
-}
-.f13 .petal {
-  width: 34px;
-  height: 34px;
-}
-.f14 .petal {
-  width: 42px;
-  height: 42px;
-}
-.f15 .petal {
-  width: 34px;
-  height: 34px;
-}
-.f16 .petal {
-  width: 36px;
-  height: 36px;
-}
-.f17 .petal {
-  width: 40px;
-  height: 40px;
-}
-.f18 .petal {
-  width: 34px;
-  height: 34px;
-}
-.f19 .petal {
-  width: 38px;
-  height: 38px;
-}
-.f20 .petal {
-  width: 40px;
-  height: 40px;
+.petal img {
+  display: block;
+  width: var(--size, 40px);
+  height: var(--size, 40px);
+  object-fit: cover;
+  opacity: var(--o, 0.95);
 }
 
 @keyframes fall {
   0% {
-    top: -10%;
+    top: -14%;
     transform: translateX(0) rotate(0deg);
   }
   25% {
-    transform: translateX(20px) rotate(90deg);
+    transform: translateX(calc(var(--drift) * 0.6)) rotate(90deg);
   }
   50% {
-    transform: translateX(-20px) rotate(180deg);
+    transform: translateX(calc(var(--drift) * -0.6)) rotate(180deg);
   }
   75% {
-    transform: translateX(15px) rotate(270deg);
+    transform: translateX(calc(var(--drift) * 0.4)) rotate(270deg);
   }
   100% {
     top: 110%;
-    transform: translateX(-15px) rotate(360deg);
+    transform: translateX(calc(var(--drift) * -0.2)) rotate(360deg);
   }
 }
 
 @media (max-width: 900px) {
-  .flower-garden {
-    opacity: 0.3;
+  .petal img {
+    opacity: 0.8;
   }
 }
