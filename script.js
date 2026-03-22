@@ -1,5 +1,3 @@
-// Guest list functionality removed.
-
 function randomBetween(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -60,7 +58,6 @@ function generatePetals(count = 40) {
   container.style.pointerEvents = "none";
 }
 
-// spawner incremental
 window._petalSpawnerId = null;
 window._petalLimit = 120;
 function startPetalSpawner(intervalMs = 600, maxPetals = 120) {
@@ -68,7 +65,6 @@ function startPetalSpawner(intervalMs = 600, maxPetals = 120) {
   window._petalLimit = maxPetals;
   const container = document.getElementById("petal-field");
   if (!container) return;
-  // spawn immediately alguns
   for (let i = 0; i < Math.min(6, Math.floor(maxPetals / 10)); i++)
     spawnPetal();
   window._petalSpawnerId = setInterval(() => {
@@ -85,11 +81,9 @@ function stopPetalSpawner() {
 window.startPetalSpawner = startPetalSpawner;
 window.stopPetalSpawner = stopPetalSpawner;
 
-// DOM ready
 document.addEventListener("DOMContentLoaded", () => {
-  // iniciar spawner incremental de pétalas (padrão)
   try {
-    startPetalSpawner(600, 120); // spawn a cada 600ms, máximo 120
+    startPetalSpawner(600, 120);
   } catch (err) {
     console.warn("startPetalSpawner failed", err);
   }
