@@ -3,78 +3,385 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Convite</title>
+    <title>Convite de Casamento – I &amp; J</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="flowers.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=DM Serif Display"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=IBM Plex Serif"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Great Vibes"
-      rel="stylesheet"
-    />
-    <script src="script.js" defer></script>
   </head>
-  <header>
-    <iframe
-      src="https://giphy.com/embed/i17zHLTMt1SmJMv6Aw"
-      style=""
-      frameborder="0"
-      class="giphy-embed"
-      allowfullscreen
-    ></iframe>
-  </header>
   <body>
-    <img
-      src="images/FotoCasamento.webp"
-      alt="Noix"
-      style="width: 600px; height: 600px"
-    />
-    <h1>02/10/2027</h1>
-    <section>
-      <button class="btn-mobile">Padrinhos</button>
-      <button class="btn-mobile">Daminhas e Pajens</button>
-      <p>Esperamos a presença de todos</p>
-      <p>Estamos felizes em compartilhar este sonho com vocês</p>
-    </section>
-    <section>
-      <h1>Madrinhas</h1>
-      <ul>
-        <li>Vestido longo azul serenity</li>
-        <li>Modelo livre</li>
-        <li>Modelo de penteado ao seu critério</li>
-        <li>Sapato neutro (prata, nude, tranparente)</li>
-      </ul>
-      <h1>Padrinhos</h1>
-      <ul>
-        <li>Terno cinza claro</li>
-        <li>Camisa branca</li>
-        <li>Sem colete</li>
-        <li>Gravata padrão azul serenity</li>
-        <li>Sapato social preto ou marrom</li>
-      </ul>
-    </section>
-    <section>
-      <h1>Daminhas</h1>
-      <ul>
-        <li>Vestido branco com faixa e laço no tom azul serenity</li>
-        <li>Sapatilha na cor branca</li>
-        <li>Meia calça branca</li>
-        <li>Penteado ao critério dos pais</li>
-      </ul>
-      <h1>Pajens</h1>
-      <ul>
-        <li>Terno cinza claro</li>
-        <li>Camisa branca, sem colete</li>
-        <li>Gravata borboleta azul serenity</li>
-        <li>Sapato socialpreto ou marrom</li>
-      </ul>
-  </footer>
-      <h3>Chegue pelo menos 30 minutos antes do início da cerimônia.<br>Confira o local do casamento com antecedência para evitar atrasos, se organize com o deslocamento.<br>Siga as instruções do cerimonial no grande dia</h3>
-  <footer>
+    <div class="wrapper">
+      <!-- ══════════════════════════════════════
+           CAPA
+      ══════════════════════════════════════ -->
+      <section class="section-cover">
+        <!-- Logo (mobile: topo centrado | desktop: canto superior esquerdo via CSS) -->
+        <div class="logo-wrap">
+          <img
+            src="images/MonogramaV4-colored.svg"
+            alt="Logo I&amp;J"
+            class="logo-img"
+          />
+        </div>
+
+        <!-- Bloco hero: no desktop vira 2 colunas -->
+        <div class="hero-grid">
+          <!-- Foto -->
+          <div class="hero-circle">
+            <img
+              src="images/FotoCasamento.webp"
+              alt="Foto dos noivos"
+              class="hero-img"
+            />
+          </div>
+
+          <!-- Conteúdo textual ao lado da foto (desktop) ou abaixo (mobile) -->
+          <div class="hero-content">
+            <p class="date-text">02/10/2027</p>
+
+            <div class="nav-btns">
+              <a class="btn-nav" href="#padrinhos">Padrinhos</a>
+              <a class="btn-nav" href="#daminhas">Daminhas e pajens</a>
+              <a
+                class="btn-nav btn-gift"
+                href="https://www.finalfeliz.de/LaisLinsJoaoVictor"
+                target="_blank"
+                rel="noopener"
+                >Lista de presentes</a
+              >
+            </div>
+
+            <div class="hero-msg">
+              <p class="msg-line">Esperamos a presença de todos</p>
+              <p class="msg-line">
+                Estamos felizes em compartilhar este sonho com vocês
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- /hero-grid -->
+      </section>
+      <!-- ══════════════════════════════════════
+           INFORMAÇÕES DO EVENTO
+      ══════════════════════════════════════ -->
+      <section class="section-info">
+        <h3 class="section-label desktop-only">Cerimônia &amp; Recepção</h3>
+
+        <div class="info-cards">
+          <!-- Cerimônia -->
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <!-- Cruz -->
+                <line x1="12" y1="2" x2="12" y2="6" />
+                <line x1="10" y1="4" x2="14" y2="4" />
+                <!-- Telhado e corpo da capela -->
+                <path d="M18 10l-6-4-6 4v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10z" />
+                <!-- Porta em arco -->
+                <path d="M10 22v-5a2 2 0 0 1 4 0v5" />
+              </svg>
+            </div>
+            <h3 class="info-card-title">Cerimônia</h3>
+            <p class="info-card-time">20:00</p>
+            <p class="info-card-place">Paróquia São José Operário</p>
+            <a
+              class="info-card-address"
+              href="https://maps.google.com/?q=Av+Siqueira+Campos+1700"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="addr-icon"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                />
+                <circle cx="12" cy="9" r="2.5" />
+              </svg>
+              Av. Siqueira Campos, 1700
+            </a>
+          </div>
+
+          <!-- Recepção -->
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <!-- Taça de brinde -->
+                <path d="M8 22h8" />
+                <path d="M12 15v7" />
+                <path d="M7 3h10l-1.5 7.5a3.5 3.5 0 0 1-7 0L7 3z" />
+                <line x1="7" y1="7" x2="17" y2="7" />
+              </svg>
+            </div>
+            <h3 class="info-card-title">Recepção</h3>
+            <p class="info-card-time">22:00</p>
+            <p class="info-card-place">Salão Fama Festas e Eventos</p>
+            <a
+              class="info-card-address"
+              href="https://maps.google.com/?q=Rua+Xavier+de+Brito"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="addr-icon"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                />
+                <circle cx="12" cy="9" r="2.5" />
+              </svg>
+              Rua Xavier de Brito
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- ══════════════════════════════════════
+           PADRINHOS
+      ══════════════════════════════════════ -->
+      <section class="section-outfit" id="padrinhos">
+        <!-- Título de seção visível só no desktop -->
+        <h3 class="section-label desktop-only">Padrinhos &amp; Madrinhas</h3>
+
+        <!-- Madrinhas -->
+        <div class="outfit-block">
+          <div class="outfit-text">
+            <h2 class="script-title">Madrinhas</h2>
+            <ul class="outfit-list">
+              <li>Vestido longo, azul serenity</li>
+              <li>Modelo livre</li>
+              <li>Modelo de penteado ao seu critério</li>
+              <li>Sapato neutro (prata, nude, transparente)</li>
+            </ul>
+          </div>
+          <div class="outfit-img-wrap">
+            <img
+              src="images/madrinhas.png"
+              alt="Vestido de madrinhas"
+              class="outfit-img"
+            />
+          </div>
+        </div>
+
+        <div class="divider-ornament">· · ✦ · ·</div>
+
+        <!-- Padrinhos -->
+        <div class="outfit-block reverse">
+          <div class="outfit-img-wrap">
+            <img
+              src="images/padrinhos.png"
+              alt="Traje de padrinhos"
+              class="outfit-img"
+            />
+          </div>
+          <div class="outfit-text">
+            <h2 class="script-title">Padrinhos</h2>
+            <ul class="outfit-list">
+              <li>Terno cinza claro</li>
+              <li>Camisa branca</li>
+              <li>Gravata padrão, cor azul serenity</li>
+              <li>Sem colete</li>
+              <li>Sapato preto ou marrom</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="divider-ornament">· · ✦ · ·</div>
+
+        <!-- Dicas padrinhos -->
+        <div class="tips-section">
+          <div class="tip-item">
+            <svg
+              class="tip-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <p class="tip-text">
+              Chegue pelo menos com 30 minutos de antecedência ao local da
+              cerimônia
+            </p>
+          </div>
+          <div class="tip-item">
+            <svg
+              class="tip-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+              />
+              <circle cx="12" cy="9" r="2.5" />
+            </svg>
+            <p class="tip-text">
+              Confira o local do casamento com antecedência, se organize com o
+              deslocamento
+            </p>
+          </div>
+          <div class="tip-item">
+            <svg
+              class="tip-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="8" y="2" width="8" height="4" rx="1" />
+              <path
+                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+              />
+              <line x1="9" y1="12" x2="15" y2="12" />
+              <line x1="9" y1="16" x2="13" y2="16" />
+            </svg>
+            <p class="tip-text">
+              Siga as instruções do cerimonial no grande dia
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           DAMINHAS & PAJENS
+      ══════════════════════════════════════ -->
+      <section class="section-outfit" id="daminhas">
+        <!-- Título de seção visível só no desktop -->
+        <h3 class="section-label desktop-only">Pajens &amp; Daminhas</h3>
+
+        <!-- Pajens -->
+        <div class="outfit-block">
+          <div class="outfit-text">
+            <h2 class="script-title">Pajens</h2>
+            <ul class="outfit-list">
+              <li>Terno cinza claro</li>
+              <li>Camisa branca</li>
+              <li>Gravata borboleta azul serenity</li>
+              <li>Sapato preto ou marrom</li>
+            </ul>
+          </div>
+          <div class="outfit-img-wrap">
+            <img
+              src="images/pajens.png"
+              alt="Traje de pajens"
+              class="outfit-img"
+            />
+          </div>
+        </div>
+
+        <div class="divider-ornament">· · ✦ · ·</div>
+
+        <!-- Daminhas -->
+        <div class="outfit-block reverse">
+          <div class="outfit-img-wrap">
+            <img
+              src="images/daminhas.png"
+              alt="Vestido de daminhas"
+              class="outfit-img"
+            />
+          </div>
+          <div class="outfit-text">
+            <h2 class="script-title">Daminhas</h2>
+            <ul class="outfit-list">
+              <li>Vestido branco com faixa e laço no tom azul serenity</li>
+              <li>Sapatilha na cor branca</li>
+              <li>Meia calça branca</li>
+              <li>Penteado a critério dos pais</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="divider-ornament">· · ✦ · ·</div>
+
+        <!-- Dicas crianças -->
+        <div class="tips-section">
+          <div class="tip-item">
+            <svg
+              class="tip-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <p class="tip-text">
+              Chegue com pelo menos 30 minutos de antecedência ao local da
+              cerimônia
+            </p>
+          </div>
+          <div class="tip-item">
+            <svg
+              class="tip-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="8" y="2" width="8" height="4" rx="1" />
+              <path
+                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+              />
+              <line x1="9" y1="12" x2="15" y2="12" />
+              <line x1="9" y1="16" x2="13" y2="16" />
+            </svg>
+            <p class="tip-text">
+              Mamãe e papai, sigam as instruções do cerimonial no grande dia,
+              para que nossa criança faça um lindo cortejo
+            </p>
+          </div>
+        </div>
+
+        <!-- Assinatura final -->
+        <div class="final-sign">
+          <h2 class="script-title sign-title">Divirta-se</h2>
+          <p class="sign-sub">– I &amp; J</p>
+        </div>
+      </section>
+    </div>
+    <!-- /wrapper -->
+  </body>
 </html>

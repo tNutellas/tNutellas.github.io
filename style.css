@@ -1,151 +1,528 @@
-.btn-mobile {
-  display: inline-block;
-  margin: 16px auto;
-  padding: 12px 28px;
-  align-items: center;
-  justify-content: center;
-  background: var(--serenity-primary-dark);
-  color: #fff;
-  border: none;
-  border-radius: 32px;
-  font-size: 1.1rem;
-  font-family: "IBM Plex Serif", serif;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(var(--serenity-shadow-rgb), 0.12);
-  transition:
-    background 0.2s,
-    box-shadow 0.2s;
-  cursor: pointer;
-  outline: none;
-}
-.btn-mobile:active,
-.btn-mobile:focus {
-  background: var(--serenity-primary-dark);
-  box-shadow: 0 4px 16px rgba(var(--serenity-shadow-rgb), 0.18);
-}
+/* ============================================================
+   RESET & VARIÁVEIS
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --serenity-bg: #e6eef7;
-  --serenity-text: #2f5d8a;
-  --serenity-shadow-rgb: 131, 160, 209;
-  --serenity-h1: #6f8faf;
-  --serenity-border: #bfd7ea;
-  --serenity-outline: #91a8d0;
-  --serenity-primary: #91a8d0;
-  --serenity-primary-dark: #6f8faf;
-  --serenity-ghost: #e6eef7;
+  --bg:         #e8eef7;
+  --text:       #2f5d8a;
+  --text-soft:  #5a7fa8;
+  --blue:       #91a8d0;
+  --blue-dk:    #6f8faf;
+  --border:     #bfd7ea;
+  --shadow:     rgba(100, 140, 200, 0.15);
 }
+
+html { font-size: 16px; }
 
 body {
-  margin: 0;
-  padding: 0;
-  color: var(--serenity-text);
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Serif', serif;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: top;
-  align-items: center;
-  background: var(--serenity-bg);
 }
 
-header {
-  width: 50%;
-  padding: 32px 0;
-  text-align: center;
-}
-.container {
-  max-width: 720px;
+
+/* ============================================================
+   ░░░  MOBILE — layout padrão (< 768px)  ░░░
+   ============================================================ */
+
+.wrapper {
   width: 100%;
+  max-width: 480px;
   margin: 0 auto;
-  padding: 40px 20px;
-  border-radius: 12px;
-  position: relative;
-  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-h1 {
-  color: var(--serenity-h1);
-  font-family: "Great Vibes", serif;
-  font-size: 90px;
-  text-align: center;
+/* --- CAPA mobile --- */
+.section-cover {
   width: 100%;
-  padding: 0;
-}
-
-h2 {
-  margin: 16px 0;
-  color: var(--serenity-h1);
-  font-family: "IBM Plex Serif", serif;
-  font-size: 24px;
-  text-align: center;
-  width: 100%;
-  padding: 0;
-}
-
-p {
-  font-family: "DM Serif Display", serif;
-  font-size: 48px;
-  text-align: center;
-  width: 100%;
-  margin: 32px 0 16px 0;
-  padding: 0;
-}
-
-.photo-placeholder {
-  width: 300px;
-  height: 300px;
-  background-color: var(--serenity-ghost);
-  border: 2px dashed var(--serenity-outline);
-  border-radius: 12px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin: 32px 0;
-  color: var(--serenity-text);
-  font-family: "IBM Plex Serif", serif;
-  font-size: 1.2rem;
+  padding-bottom: 32px;
 }
 
-.photo-placeholder span {
-  text-align: center;
+.logo-wrap {
+  margin: 28px auto 18px;
+  width: 88px;
+  height: 88px;
 }
+.logo-img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-.button-group {
+/* Hero: coluna única no mobile */
+.hero-grid {
+  width: 100%;
   display: flex;
-  gap: 32px;
-  margin: 32px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.hero-circle {
+  width: 80%;
+  max-width: 300px;
+  aspect-ratio: 1;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(var(--serenity-shadow-rgb), 0.12);
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+  margin: 0 auto 20px;
+}
+.hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.hero-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-section {
+.date-text {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text);
   text-align: center;
-  button {
+  letter-spacing: 0.03em;
+  margin-bottom: 18px;
+}
+
+.nav-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 16px;
+  margin-bottom: 20px;
+}
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 22px;
+  border-radius: 30px;
+  background: var(--blue-dk);
+  color: #fff;
+  border: none;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 0.88rem;
+  text-decoration: none;
+  box-shadow: 0 2px 10px var(--shadow);
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn-nav:hover { background: #5a7fa8; transform: translateY(-1px); }
+.btn-nav:active { transform: translateY(0); box-shadow: none; }
+
+/* Botão de presentes — sem diferença visual */
+.btn-gift { background: var(--blue-dk); }
+
+.hero-msg { padding: 0 24px; text-align: center; }
+.msg-line {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   SEÇÃO DE INFORMAÇÕES DO EVENTO
+   ============================================================ */
+.section-info {
+  width: 100%;
+  padding: 36px 20px 40px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(100, 140, 200, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.info-card-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--blue-dk);
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+.info-card-icon svg { width: 100%; height: 100%; }
+
+.info-card-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.info-card-time {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--blue-dk);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.info-card-place {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.info-card-address {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 0.84rem;
+  color: var(--text-soft);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+.info-card-address:hover {
+  color: #fff;
+  background: var(--blue-dk);
+  border-color: var(--blue-dk);
+  transform: translateY(-1px);
+}
+
+.addr-icon { width: 14px; height: 14px; flex-shrink: 0; }
+
+.info-divider {
+  display: none;
+}
+
+/* ============================================================
+   SEÇÕES DE TRAJE
+   ============================================================ */
+.section-outfit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 0 24px;
+  border-top: 1px solid var(--border);
+}
+
+.section-label { display: none; } /* oculto no mobile */
+
+.outfit-block {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 18px 8px;
+  gap: 10px;
+}
+
+/* Mobile: no bloco "reverse", imagem sobe */
+.outfit-block.reverse .outfit-img-wrap { order: -1; }
+
+.script-title {
+  font-family: 'Great Vibes', cursive;
+  color: var(--text);
+  font-size: 2.3rem;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.outfit-list {
+  list-style: disc;
+  padding-left: 18px;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 0.87rem;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.outfit-img-wrap {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+.outfit-img { width: 100%; height: auto; object-fit: contain; display: block; }
+
+.divider-ornament {
+  text-align: center;
+  color: var(--blue);
+  font-size: 0.72rem;
+  letter-spacing: 6px;
+  padding: 10px 0 2px;
+  opacity: 0.6;
+}
+
+/* --- Dicas mobile --- */
+.tips-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px 18px 4px;
+}
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.tip-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  color: var(--blue-dk);
+  opacity: 0.78;
+  margin-top: 1px;
+}
+.tip-text {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* --- Assinatura mobile --- */
+.final-sign {
+  text-align: center;
+  padding: 28px 0 12px;
+}
+.sign-title { font-size: 2.6rem; }
+.sign-sub {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  margin-top: 4px;
+  letter-spacing: 0.06em;
+}
+
+
+/* ============================================================
+   ░░░  DESKTOP — layout alternativo (≥ 768px)  ░░░
+   ============================================================ */
+@media (min-width: 768px) {
+
+  body {
+    background: var(--bg);
+    padding: 0;
+  }
+
+  /* Container mais largo, sem card */
+  .wrapper {
+    max-width: 860px;
+  }
+
+  /* ---- CAPA desktop: logo no topo, hero em 2 colunas ---- */
+  .section-cover {
+    padding-bottom: 52px;
+    position: relative;
+  }
+
+  .logo-wrap {
+    width: 110px;
+    height: 110px;
+    margin: 40px auto 36px;
+  }
+
+  /* Hero vira grid 2 colunas */
+  .hero-grid {
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 52px;
+    padding: 0 56px;
+    width: 100%;
   }
+
+  /* Foto maior no desktop */
+  .hero-circle {
+    width: 320px;
+    max-width: 320px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  /* Conteúdo à direita */
+  .hero-content {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+  }
+
+  .date-text {
+    font-size: 2.6rem;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .nav-btns {
+    justify-content: flex-start;
+    padding: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .btn-nav {
+    font-size: 0.95rem;
+    padding: 11px 26px;
+  }
+
+  .hero-msg { padding: 0; text-align: left; }
+  .msg-line { font-size: 1.05rem; line-height: 1.9; }
+
+  /* ---- Informações do evento desktop ---- */
+  .section-info {
+    padding: 44px 56px 48px;
+  }
+
+  .info-cards {
+    flex-direction: row;
+    gap: 36px;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  .info-card {
+    flex: 1;
+    padding: 32px 28px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(100, 140, 200, 0.08);
+  }
+
+  .info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(100, 140, 200, 0.12);
+  }
+
+  .info-card-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 12px;
+  }
+
+  .info-card-title {
+    font-size: 2.7rem;
+    margin-bottom: 4px;
+  }
+
+  .info-card-time {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .info-card-place {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+  }
+
+  .info-card-address {
+    font-size: 0.88rem;
+    padding: 8px 18px;
+  }
+
+  /* ---- Seções de traje desktop ---- */
+  .section-outfit {
+    padding: 0 0 40px;
+  }
+
+  /* Título de seção desktop (oculto no mobile) */
+  .desktop-only {
+    display: block;
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue);
+    opacity: 0.7;
+    text-align: center;
+    padding: 32px 0 4px;
+  }
+
+  /* Outfit blocks: lado a lado */
+  .outfit-block {
+    flex-direction: row;
+    align-items: center;
+    padding: 32px 56px 16px;
+    gap: 40px;
+  }
+  .outfit-block.reverse      { flex-direction: row-reverse; }
+  /* Cancela o order do mobile */
+  .outfit-block.reverse .outfit-img-wrap { order: 0; }
+
+  .outfit-text { flex: 1 1 55%; }
+
+  .outfit-img-wrap {
+    flex: 0 0 38%;
+    max-width: 38%;
+  }
+
+  .script-title  { font-size: 3rem; margin-bottom: 10px; }
+  .outfit-list   { font-size: 0.95rem; line-height: 1.85; }
+
+  /* Dicas desktop: em linha (3 colunas) quando couber */
+  .tips-section {
+    flex-direction: row;
+    gap: 0;
+    padding: 20px 48px 8px;
+    border-top: 1px dashed var(--border);
+    border-bottom: 1px dashed var(--border);
+    margin: 8px 0;
+  }
+  .tip-item {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 16px 20px;
+    border-right: 1px dashed var(--border);
+  }
+  .tip-item:last-child { border-right: none; }
+
+  .tip-icon {
+    width: 32px;
+    height: 32px;
+    opacity: 0.7;
+    margin-top: 0;
+  }
+  .tip-text { font-size: 0.82rem; line-height: 1.6; }
+
+  /* Assinatura desktop */
+  .final-sign { padding: 44px 0 24px; }
+  .sign-title { font-size: 3.4rem; }
+  .sign-sub   { font-size: 1.05rem; }
+
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  font-family: "IBM Plex Serif", serif;
-  font-size: 30px;
-  text-align: left;
-}
 
-footer {
-  width: 100%;
-  text-align: center;
-  font-family: "IBM Plex Serif", serif;
-  color: var(--serenity-text);
-}
+/* ============================================================
+   ACESSIBILIDADE
+   ============================================================ */
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
