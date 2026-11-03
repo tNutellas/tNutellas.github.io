@@ -43,8 +43,9 @@
             <p class="date-text">02/10/2027</p>
 
             <div class="nav-btns">
-              <a class="btn-nav" href="#padrinhos">Padrinhos</a>
-              <a class="btn-nav" href="#daminhas">Daminhas e pajens</a>
+              <a class="btn-nav" href="padrinhos.html">Padrinhos</a>
+              <a class="btn-nav" href="daminhas.html">Daminhas e pajens</a>
+              <a class="btn-nav btn-convid" href="#convidados">Convidados</a>
               <a
                 class="btn-nav btn-gift"
                 href="https://www.finalfeliz.de/LaisLinsJoaoVictor"
@@ -167,213 +168,75 @@
         </div>
       </section>
       <!-- ══════════════════════════════════════
-           PADRINHOS
+           CONVIDADOS
       ══════════════════════════════════════ -->
-      <section class="section-outfit" id="padrinhos">
-        <!-- Título de seção visível só no desktop -->
-        <h3 class="section-label desktop-only">Padrinhos &amp; Madrinhas</h3>
-
-        <!-- Madrinhas -->
-        <div class="outfit-block">
-          <div class="outfit-text">
-            <h2 class="script-title">Madrinhas</h2>
-            <ul class="outfit-list">
-              <li>Vestido longo, azul serenity</li>
-              <li>Modelo livre</li>
-              <li>Modelo de penteado ao seu critério</li>
-              <li>Sapato neutro (prata, nude, transparente)</li>
-            </ul>
-          </div>
-          <div class="outfit-img-wrap">
-            <img
-              src="images/madrinhas.png"
-              alt="Vestido de madrinhas"
-              class="outfit-img"
-            />
-          </div>
-        </div>
-
+      <section class="section-outfit" id="convidados">
+        <h3 class="section-label desktop-only">Informações aos convidados</h3>
+        <h2 class="script-title guests-title">Convidados</h2>
         <div class="divider-ornament">· · ✦ · ·</div>
 
-        <!-- Padrinhos -->
-        <div class="outfit-block reverse">
-          <div class="outfit-img-wrap">
-            <img
-              src="images/padrinhos.png"
-              alt="Traje de padrinhos"
-              class="outfit-img"
-            />
-          </div>
-          <div class="outfit-text">
-            <h2 class="script-title">Padrinhos</h2>
-            <ul class="outfit-list">
-              <li>Terno cinza claro</li>
-              <li>Camisa branca</li>
-              <li>Gravata padrão, cor azul serenity</li>
-              <li>Sem colete</li>
-              <li>Sapato preto ou marrom</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="divider-ornament">· · ✦ · ·</div>
-
-        <!-- Dicas padrinhos -->
-        <div class="tips-section">
+        <div class="tips-section tips-grid">
+          <!-- Confirmar presença -->
           <div class="tip-item">
-            <svg
-              class="tip-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
+            <svg class="tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            <p class="tip-text">
-              Chegue pelo menos com 30 minutos de antecedência ao local da
-              cerimônia
-            </p>
+            <p class="tip-text">Pedimos que confirme sua presença, é muito importante para a organização do evento.</p>
           </div>
+
+          <!-- Traje -->
           <div class="tip-item">
-            <svg
-              class="tip-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
-              />
+            <svg class="tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 6a2 2 0 1 1 2-2" />
+              <path d="M12 6v2L3 15a1.5 1.5 0 0 0 1 2.7h16a1.5 1.5 0 0 0 1-2.7l-9-7" />
+            </svg>
+            <p class="tip-text">Evite roupas em tons claros ou em tons muito próximos ao branco, reservados à noiva.</p>
+          </div>
+
+          <!-- Fotos -->
+          <div class="tip-item">
+            <svg class="tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+              <circle cx="12" cy="13" r="4" />
+            </svg>
+            <p class="tip-text">Fique à vontade para registrar os momentos especiais, mas pedimos que evite ficar em pé ou atrapalhar a visão durante a cerimônia, vamos deixar o fotógrafo registrar cada detalhe!</p>
+          </div>
+
+          <!-- Endereços -->
+          <div class="tip-item">
+            <svg class="tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
               <circle cx="12" cy="9" r="2.5" />
             </svg>
-            <p class="tip-text">
-              Confira o local do casamento com antecedência, se organize com o
-              deslocamento
-            </p>
+            <p class="tip-text">Confira os endereços da cerimônia e da recepção, recomendamos verificar a rota com antecedência.</p>
           </div>
+
+          <!-- Antecedência -->
           <div class="tip-item">
-            <svg
-              class="tip-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="8" y="2" width="8" height="4" rx="1" />
-              <path
-                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
-              />
-              <line x1="9" y1="12" x2="15" y2="12" />
-              <line x1="9" y1="16" x2="13" y2="16" />
-            </svg>
-            <p class="tip-text">
-              Siga as instruções do cerimonial no grande dia
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ══════════════════════════════════════
-           DAMINHAS & PAJENS
-      ══════════════════════════════════════ -->
-      <section class="section-outfit" id="daminhas">
-        <!-- Título de seção visível só no desktop -->
-        <h3 class="section-label desktop-only">Pajens &amp; Daminhas</h3>
-
-        <!-- Pajens -->
-        <div class="outfit-block">
-          <div class="outfit-text">
-            <h2 class="script-title">Pajens</h2>
-            <ul class="outfit-list">
-              <li>Terno cinza claro</li>
-              <li>Camisa branca</li>
-              <li>Gravata borboleta azul serenity</li>
-              <li>Sapato preto ou marrom</li>
-            </ul>
-          </div>
-          <div class="outfit-img-wrap">
-            <img
-              src="images/pajens.png"
-              alt="Traje de pajens"
-              class="outfit-img"
-            />
-          </div>
-        </div>
-
-        <div class="divider-ornament">· · ✦ · ·</div>
-
-        <!-- Daminhas -->
-        <div class="outfit-block reverse">
-          <div class="outfit-img-wrap">
-            <img
-              src="images/daminhas.png"
-              alt="Vestido de daminhas"
-              class="outfit-img"
-            />
-          </div>
-          <div class="outfit-text">
-            <h2 class="script-title">Daminhas</h2>
-            <ul class="outfit-list">
-              <li>Vestido branco com faixa e laço no tom azul serenity</li>
-              <li>Sapatilha na cor branca</li>
-              <li>Meia calça branca</li>
-              <li>Penteado a critério dos pais</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="divider-ornament">· · ✦ · ·</div>
-
-        <!-- Dicas crianças -->
-        <div class="tips-section">
-          <div class="tip-item">
-            <svg
-              class="tip-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <svg class="tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <p class="tip-text">
-              Chegue com pelo menos 30 minutos de antecedência ao local da
-              cerimônia
-            </p>
+            <p class="tip-text">Pedimos que chegue com antecedência para não perder nenhum momento da cerimônia.</p>
           </div>
+
+          <!-- Pontualidade -->
           <div class="tip-item">
-            <svg
-              class="tip-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="8" y="2" width="8" height="4" rx="1" />
-              <path
-                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
-              />
-              <line x1="9" y1="12" x2="15" y2="12" />
-              <line x1="9" y1="16" x2="13" y2="16" />
+            <svg class="tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 22h14" /><path d="M5 2h14" />
+              <path d="M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22" />
+              <path d="M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2" />
             </svg>
-            <p class="tip-text">
-              Mamãe e papai, sigam as instruções do cerimonial no grande dia,
-              para que nossa criança faça um lindo cortejo
-            </p>
+            <p class="tip-text">A cerimônia começará pontualmente no horário informado.</p>
+          </div>
+
+          <!-- Celebre -->
+          <div class="tip-item">
+            <svg class="tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <p class="tip-text">Curta bastante, celebre o amor e faça desse dia uma lembrança inesquecível.</p>
           </div>
         </div>
 
