@@ -115,15 +115,11 @@ body {
 .btn-nav:hover { background: #5a7fa8; transform: translateY(-1px); }
 .btn-nav:active { transform: translateY(0); box-shadow: none; }
 
-/* Botão de presentes — sem diferença visual */
-.btn-gift { background: var(--blue-dk); }
-
 .hero-msg { padding: 0 24px; text-align: center; }
 .msg-line {
   font-family: 'DM Serif Display', serif;
   font-style: italic;
   font-size: 0.95rem;
-  font-weight: 600;
   color: var(--text);
   line-height: 1.8;
 }
@@ -155,17 +151,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(100, 140, 200, 0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
 }
-
-.info-card-icon {
-  width: 36px;
-  height: 36px;
-  color: var(--blue-dk);
-  opacity: 0.85;
-  margin-bottom: 10px;
-}
-.info-card-icon svg { width: 100%; height: 100%; }
 
 .info-card-title {
   font-family: 'Great Vibes', cursive;
@@ -214,10 +200,6 @@ body {
 }
 
 .addr-icon { width: 14px; height: 14px; flex-shrink: 0; }
-
-.info-divider {
-  display: none;
-}
 
 /* ============================================================
    SEÇÃO CONVIDADOS (reaproveita .section-outfit / .tips-section)
@@ -275,8 +257,6 @@ body {
   padding: 0 0 24px;
   border-top: 1px solid var(--border);
 }
-
-.section-label { display: none; } /* oculto no mobile */
 
 .outfit-block {
   display: flex;
@@ -382,7 +362,6 @@ body {
   /* ---- CAPA desktop: logo no topo, hero em 2 colunas ---- */
   .section-cover {
     padding-bottom: 52px;
-    position: relative;
   }
 
   .logo-wrap {
@@ -460,17 +439,6 @@ body {
     box-shadow: 0 8px 30px rgba(100, 140, 200, 0.08);
   }
 
-  .info-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 36px rgba(100, 140, 200, 0.12);
-  }
-
-  .info-card-icon {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 12px;
-  }
-
   .info-card-title {
     font-size: 2.7rem;
     margin-bottom: 4px;
@@ -494,20 +462,6 @@ body {
   /* ---- Seções de traje desktop ---- */
   .section-outfit {
     padding: 0 0 40px;
-  }
-
-  /* Título de seção desktop (oculto no mobile) */
-  .desktop-only {
-    display: block;
-    font-family: 'IBM Plex Serif', serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--blue);
-    opacity: 0.7;
-    text-align: center;
-    padding: 32px 0 4px;
   }
 
   /* Outfit blocks: lado a lado */
